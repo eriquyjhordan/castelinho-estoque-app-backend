@@ -52,7 +52,9 @@ class SubCategoriesController{
     }
 
     async index(req, res){
-        const subcategories = await SubCategories.findAll({
+        const category = req.params.category;
+        console.log(category);
+        const subcategories = await SubCategories.findAll({where: { category }},{
             attributes: ['id', 'name'],
             include: [
                 {

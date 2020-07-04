@@ -34,7 +34,7 @@ class ComprasController{
 
     async index(req, res){
         const compras = await Compras.findAll({
-            attributes: ['id', 'quantidade', 'created_at'],
+            attributes: ['id', 'quantidade', 'custo', 'created_at'],
             include: [
                 {
                     model: Insumos,
