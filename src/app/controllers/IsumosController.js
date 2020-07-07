@@ -59,6 +59,9 @@ class InsumosController{
     async index(req, res){
         const insumos = await Insumos.findAll({
             attributes: ['id', 'name', 'quantidade'],
+            order: [
+                'name'
+            ],
             include: [
                 {
                     model: Categories,

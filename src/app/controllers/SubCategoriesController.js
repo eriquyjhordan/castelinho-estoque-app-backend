@@ -55,6 +55,9 @@ class SubCategoriesController{
         const category = req.params.category;
         console.log(category);
         const subcategories = await SubCategories.findAll({where: { category }},{
+            order: [
+                'name'
+            ],
             attributes: ['id', 'name'],
             include: [
                 {
