@@ -10,17 +10,8 @@ const InsumosController = require('./app/controllers/IsumosController');
 const ComprasController = require('./app/controllers/ComprasController');
 const SaidasController = require('./app/controllers/SaidasController');
 
-const auth = require('./app/middlewares/auth');
-
-const Categories = require('./app/models/Categories');
-
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
-
-routes.get('/', (req, res)=>{
-    return res.send('OK');
-});
-
 routes.get('/users', UserController.index);
 routes.put('/users', UserController.update);
 routes.get('/categories', CategoriesController.index);
